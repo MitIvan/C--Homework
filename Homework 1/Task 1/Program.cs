@@ -19,28 +19,37 @@ namespace Task_1
 
             float sum = 0;
 
-            switch (mathOperator)
+
+            if(numY == 0 && mathOperator == "/")
             {
-                case "+":
-                    sum = numX + numY;
-                    Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
-                    break;
-                case "-":
-                    sum = numX - numY;
-                    Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
-                    break;
-                case "*":
-                    sum = numX * numY;
-                    Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
-                    break;
-                case "/":
-                    sum = numX / numY;
-                    Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
-                    break;
-                default:
-                    Console.WriteLine("Something went wrong");
-                    break;
+                Console.WriteLine("Can't devide by 0");
             }
+            else
+            {
+                switch (mathOperator)
+                {
+                    case "+":
+                        sum = numX + numY;
+                        Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
+                        break;
+                    case "-":
+                        sum = numX - numY;
+                        Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
+                        break;
+                    case "*":
+                        sum = numX * numY;
+                        Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
+                        break;
+                    case "/":
+                        sum = numX / numY;
+                        Console.WriteLine(numX + " " + mathOperator + " " + numY + " = " + sum);
+                        break;
+                    default:
+                        Console.WriteLine("Something went wrong");
+                        break;
+                }
+            }
+           
 
             Console.ReadLine();
         }
