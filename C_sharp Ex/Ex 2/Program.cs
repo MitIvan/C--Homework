@@ -1,0 +1,29 @@
+﻿using System;
+
+namespace Ex_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for(int i = 1; i <= 100; i++)
+            {
+                if(i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FIZZ-BUZZ");
+                }else if(i % 3 == 0)
+                {
+                    Console.WriteLine("FIZZ");
+                }else if(i % 5 == 0)
+                {
+                    Console.WriteLine("BUZZ");
+                } else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
