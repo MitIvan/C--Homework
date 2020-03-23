@@ -173,6 +173,8 @@ namespace Heroes_Journey
                     Console.WriteLine("The character was created successfully.");
                     Console.WriteLine(characterName + "(" + raceName + ")" + " the " + className);
                     Console.WriteLine(health + "HP, " + strength + "STR, " + agility + "AGI");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadLine();
                     break;
 
                 }
