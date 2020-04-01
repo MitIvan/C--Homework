@@ -68,107 +68,182 @@ namespace Task_3
             }
             return car;
         }
+
         static void Main(string[] args)
         {
-            #region First selection and first score
-            Console.WriteLine("Please select a Driver");
-            Console.WriteLine("1. Greg");
-            Console.WriteLine("2. Bob");
-            Console.WriteLine("3. Jill");
-            Console.WriteLine("4. Anne");
+            while (true)
+            {
+                Driver driverOne = null;
+                Car carOne = null;
+                int scoreOne = 0;
+                int inputDriverOne = 0;
+                int inputCarOne = 0;
 
-            bool pasreInputDriverOne = int.TryParse(Console.ReadLine(), out int inputDriverOne);
-            Driver driverOne = SelectDriver(inputDriverOne);
+                Driver driverTwo = null;
+                Car carTwo = null;
+                int inputDriverTwo = 0;
+                int inputCarTwo = 0;
+                int scoreTwo = 0;
+                
+                #region First selection and first score
+                while (true)
+                {
+                    Console.WriteLine("Please select a Driver");
+                    Console.WriteLine("1. Greg");
+                    Console.WriteLine("2. Bob");
+                    Console.WriteLine("3. Jill");
+                    Console.WriteLine("4. Anne");
+                    bool pasreInputDriverOne = int.TryParse(Console.ReadLine(), out inputDriverOne);
+                    if (!pasreInputDriverOne || inputDriverOne < 1 || inputDriverOne > 4)
+                    {
+                        Console.WriteLine("Wrong Input");
+                        continue;
+                    }
+                    else
+                    {
+                         driverOne = SelectDriver(inputDriverOne);
+                    }
+                    break;
+                }
+                while (true)
+                {
+                    Console.WriteLine("Please select a Car");
+                    Console.WriteLine("1. Mazda");
+                    Console.WriteLine("2. Hyundai");
+                    Console.WriteLine("3. Ferrari");
+                    Console.WriteLine("4. Porsche");
+                    bool pasreInputCarrOne = int.TryParse(Console.ReadLine(), out inputCarOne);
+                    if(!pasreInputCarrOne || inputCarOne < 1 || inputCarOne > 4)
+                    {
+                        Console.WriteLine("Wrong Input");
+                        continue;
+                    }
+                    else
+                    {
+                         carOne = SelectCar(inputCarOne);
+                    }
+                        scoreOne = RaceCars(driverOne, carOne);
+                    break;
+                }
+                #endregion
 
-            Console.WriteLine("Please select a Car");
-            Console.WriteLine("1. Mazda");
-            Console.WriteLine("2. Hyundai");
-            Console.WriteLine("3. Ferrari");
-            Console.WriteLine("4. Porsche");
+                #region Second selection and second score
+                while (true)
+                {
+                    Console.WriteLine("Please select a second driver");
+                    if (inputDriverOne != 1)
+                    {
+                        Console.WriteLine("1. Greg");
+                    }
+                    if (inputDriverOne != 2)
+                    {
+                        Console.WriteLine("2. Bob");
+                    }
+                    if (inputDriverOne != 3)
+                    {
+                        Console.WriteLine("3. Jill");
+                    }
+                    if (inputDriverOne != 4)
+                    {
+                        Console.WriteLine("4. Anne");
+                    }
+                    bool pasreInputDriverTwo = int.TryParse(Console.ReadLine(), out  inputDriverTwo);
+                    if(!pasreInputDriverTwo || inputDriverTwo == inputDriverOne || inputDriverTwo < 1 || inputDriverTwo > 4)
+                    {
+                        Console.WriteLine("Wrong input");
+                        continue;
+                    }
+                    driverTwo = SelectDriver(inputDriverTwo);
+                    break;
+                }
+                while (true)
+                {
+                    Console.WriteLine("Please select a second car");
+                    if (inputCarOne != 1)
+                    {
+                        Console.WriteLine("1. Mazda");
+                    }
+                    if (inputCarOne != 2)
+                    {
+                        Console.WriteLine("2. Hyundai");
+                    }
+                    if (inputCarOne != 3)
+                    {
+                        Console.WriteLine("3. Ferrari");
+                    }
+                    if (inputCarOne != 4)
+                    {
+                        Console.WriteLine("4. Porsche");
+                    }
+                    bool pasreInputCarTwo = int.TryParse(Console.ReadLine(), out  inputCarTwo);
+                    if (!pasreInputCarTwo || inputCarTwo == inputCarOne || inputCarTwo < 1 || inputCarTwo > 4)
+                    {
+                        Console.WriteLine("Wrong input");
+                        continue;
+                    }
+                    else
+                    {
+                        carTwo = SelectCar(inputCarTwo);
+                    }
+                    scoreTwo = RaceCars(driverTwo, carTwo);
+                    break;
+                }
+                #endregion
 
-            bool pasreInputCarrOne = int.TryParse(Console.ReadLine(), out int inputCarOne);
-            Car carOne = SelectCar(inputCarOne);
-            
-            int scoreOne = RaceCars(driverOne, carOne);
+                #region Finale score
 
-            #endregion
-
-            #region Second selection and second score
-            Console.WriteLine("Please select a second driver");
-            if (inputDriverOne != 1)
-            {
-                Console.WriteLine("1. Greg");
+                if (scoreOne > scoreTwo)
+                {
+                    Console.WriteLine($"{driverOne.Name} with {carOne.Model} was driving {carOne.Speed}km/h had a score of {scoreOne} and won the race!!!");
+                    Console.WriteLine("Do you want to race again");
+                    while (true)
+                    {
+                        Console.WriteLine("1. YES");
+                        Console.WriteLine("2. NO");
+                        bool parseNewGame = int.TryParse(Console.ReadLine(), out int newGame);
+                        if (!parseNewGame || newGame < 1 || newGame > 2)
+                        {
+                            Console.WriteLine("Wrong input");
+                            continue;
+                        }
+                        if (newGame == 1)
+                        {
+                            Console.Clear();
+                            break;
+                        }
+                        if (newGame == 2)
+                        {
+                            Environment.Exit(0);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"{driverTwo.Name} with {carTwo.Model} was driving {carTwo.Speed}km/h  had a score of {scoreTwo} and won the race!!!");
+                    Console.WriteLine("Do you want to race again");
+                    while (true)
+                    {
+                        Console.WriteLine("1. YES");
+                        Console.WriteLine("2. NO");
+                        bool parseNewGame = int.TryParse(Console.ReadLine(), out int newGame);
+                        if (!parseNewGame || newGame < 1 || newGame > 2)
+                        {
+                            Console.WriteLine("Wrong input");
+                            continue;
+                        }
+                        if (newGame == 1)
+                        {
+                            Console.Clear();
+                            break;
+                        }
+                        if (newGame == 2)
+                        {
+                            Environment.Exit(0);
+                        }
+                    }
+                }
+                    #endregion
             }
-            if (inputDriverOne != 2)
-            {
-                Console.WriteLine("2. Bob");
-            }
-            if (inputDriverOne != 3)
-            {
-                Console.WriteLine("3. Jill");
-            }
-            if (inputDriverOne != 4)
-            {
-                Console.WriteLine("4. Anne");
-            }
-
-            Driver driverTwo = null;
-            bool pasreInputDriverTwo = int.TryParse(Console.ReadLine(), out int inputDriverTwo);
-            if(inputDriverTwo != inputDriverOne)
-            {
-                 driverTwo = SelectDriver(inputDriverTwo);
-            }
-            else
-            {
-                Console.WriteLine("Driver already selected");
-            }
-
-
-            Console.WriteLine("Please select a second car");
-            if (inputCarOne != 1)
-            {
-                Console.WriteLine("1. Mazda");
-            }
-            if (inputCarOne != 2)
-            {
-                Console.WriteLine("2. Hyundai");
-            }
-            if (inputCarOne != 3)
-            {
-                Console.WriteLine("3. Ferrari");
-            }
-            if (inputCarOne != 4)
-            {
-                Console.WriteLine("4. Porsche");
-            }
-
-            Car carTwo = null;
-            bool pasreInputCarTwo = int.TryParse(Console.ReadLine(), out int inputCarTwo);
-            if (inputDriverTwo != inputDriverOne)
-            {
-                carTwo = SelectCar(inputCarTwo);
-            }
-            else
-            {
-                Console.WriteLine("Car already selected");
-            }
-
-            int scoreTwo = RaceCars(driverTwo, carTwo);
-            #endregion
-
-            #region Finale score
-            if (scoreOne > scoreTwo)
-            {
-                Console.WriteLine($"{driverOne.Name} with {carOne.Model} was driving {carOne.Speed}km/h had a score of {scoreOne} and won the race!!!");
-            }
-            else
-            {
-                Console.WriteLine($"{driverTwo.Name} with {carTwo.Model} was driving {carTwo.Speed}km/h  had a score of {scoreTwo} and won the race!!!");
-            }
-
-            #endregion;
-
-            Console.ReadLine();
         }
     }
 }
