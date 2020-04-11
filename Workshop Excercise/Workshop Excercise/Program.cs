@@ -32,11 +32,11 @@ namespace Workshop_Excercise
                 martin
             };
 
-            Ceo trump = new Ceo("Donald", "Trump", 7000);
+            Ceo trump = new Ceo("Donald", "Trump", 7000, companyEmployees);
             trump.AddSharesPrice(100);
             trump.GetSalary();
             trump.PrintInfo();
-            trump.PrintEmployees(companyEmployees);
+            trump.PrintEmployees();
 
 
 

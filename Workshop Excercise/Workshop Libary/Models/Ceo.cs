@@ -12,13 +12,14 @@ namespace Workshop_Libary.Models
 
         public Ceo() { }
 
-        public Ceo(string firstName, string lastName, int shares) 
+        public Ceo(string firstName, string lastName, int shares, Employee[] employees) 
         {
             FirstName = firstName;
             LastName = lastName;
             Shares = shares;
             Salary = 10000;
             Role = Role.Ceo;
+            Employees = employees;
         }
 
         public double AddSharesPrice(double sharePrice)
@@ -27,10 +28,10 @@ namespace Workshop_Libary.Models
             return SharesPrice;
         }
 
-        public void PrintEmployees(Employee[] arrayOfEmployees)
+        public void PrintEmployees()
         {
             Console.WriteLine("Employees:");
-            foreach (var employee in arrayOfEmployees)
+            foreach (var employee in Employees)
             {
                 employee.PrintInfo();
             }
