@@ -9,6 +9,7 @@ namespace Workshop_Libary
         Sales,
         Manager,
         Contractor,
+        Ceo,
         Other
     }
 }
