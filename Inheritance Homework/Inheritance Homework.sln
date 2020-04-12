@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance Homework class 7", "Inheritance Homework class 7\Inheritance Homework class 7.csproj", "{7035BFA0-1E38-4450-AEE7-9D8CD111636E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleLibrary", "Vehicle\VehicleLibrary.csproj", "{53C6F322-C0E9-4CAB-A7B8-EB520F7C6FE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7035BFA0-1E38-4450-AEE7-9D8CD111636E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7035BFA0-1E38-4450-AEE7-9D8CD111636E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7035BFA0-1E38-4450-AEE7-9D8CD111636E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7035BFA0-1E38-4450-AEE7-9D8CD111636E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C6F322-C0E9-4CAB-A7B8-EB520F7C6FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C6F322-C0E9-4CAB-A7B8-EB520F7C6FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C6F322-C0E9-4CAB-A7B8-EB520F7C6FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C6F322-C0E9-4CAB-A7B8-EB520F7C6FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E73E3997-6785-4D23-A9F8-3C82D05F56DD}
+	EndGlobalSection
+EndGlobal
