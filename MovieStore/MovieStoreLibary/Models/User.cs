@@ -9,12 +9,11 @@ namespace MovieStoreLibary.Models
     {
         public string MemberId { get; set; }
         public TypeOfSubscription SubscriptionType { get; set; }
-        public string[] RentedMovies  { get; set; }
+        public Movie[] RentedMovies  { get; set; }
 
         public User () 
         {
             Role = Role.User;
-            RentedMovies =  new string[] { };
         }
 
         public User (string memberId, TypeOfSubscription subscriptionType, string firstName, string lastName, int age, string userName, string password, long phoneNumber, DateTime dateOfRegistration)
@@ -30,10 +29,6 @@ namespace MovieStoreLibary.Models
             DateOfRegistration = dateOfRegistration;
         }
 
-        public User(string[] rentedMovies)
-        {
-            RentedMovies = rentedMovies;
-        }
 
     }
 }

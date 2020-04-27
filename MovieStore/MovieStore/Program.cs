@@ -28,7 +28,8 @@ namespace MovieStore
                 Console.WriteLine("Welcome to MOVIE STORE inc. If you are an employee press 1, If you are user press 2!");
                 Console.WriteLine("1. Employee");
                 Console.WriteLine("2. User");
-              
+                Console.WriteLine("3. Exit");
+
                 bool inputCheck = false;
                 while (!inputCheck)
                 {
@@ -74,9 +75,9 @@ namespace MovieStore
                                 foreach (var movie in arrayOfMovies)
                                 {
                                     Console.WriteLine($"{movie.Title}");
-                                    Console.ReadLine();
-                                    Console.Clear();
                                 }
+                                Console.ReadLine();
+                                Console.Clear();
                             }
                             else if (employeeInput == 4)
                             {
@@ -132,31 +133,15 @@ namespace MovieStore
                             }
                             else if(userInput == 2)
                             {
-                                Console.WriteLine("Please enter movie  title for rent");
-                                string movieInput = Console.ReadLine();
-                                arrayOfMovies = UserMethods.RentMovie(arrayOfMovies, movieInput);
-
-                                string[] renMovie = { movieInput };
-
-                                logedUser.RentedMovies = renMovie;
+                                arrayOfMovies = UserMethods.RentMovie(arrayOfMovies, logedUser);
 
                                 //string[] userMoies = new string[] { };
 
-                               // Array.Resize(ref logedUser.RentedMovies, userMoies.Length + 1);
+                                 //Array.Resize(ref logedUser.RentedMovies, userMoies.Length + 1);
                                 //userMoies[userMoies.Length - 1] = rentedMoie;
 
-                                //user.RentedMovies = userMoies;
-                                Console.WriteLine($"{logedUser.RentedMovies}--- {logedUser}");
                                 Console.ReadLine();
-                                Console.WriteLine("Movie rented");
-                                
-                                
-                                foreach (var item in arrayOfMovies)
-                                {
-                                    Console.WriteLine($"{item.Title}");
-                                }
-                                Console.WriteLine($"{logedUser.RentedMovies}---");
-                                Console.ReadLine();
+                                Console.WriteLine($"Movie rented : {logedUser.RentedMovies[0].Title}");
                                 Console.Clear();
                             }
                             else if(userInput == 3)
@@ -164,39 +149,18 @@ namespace MovieStore
                                 userExit = true;
                             }
                         }
+                    }else if( input == 3 )
+                    {
+                        exit = true;
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect input! Press 1 or 2");
+                        Console.WriteLine("Incorrect input! Press 1, 2 or 3");
                     }
                     #endregion
                 }
 
-                
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //Console.WriteLine($"{ivan.DateOfRegistration}");
-
-
-            //ivan.SetBonus();
-            //ivan.SetSalary();
-
-            //Movie LoTR = new Movie("lotr", "good movie", 2011, Genre.SciFi);
-            //Console.WriteLine($"{LoTR.Genre}");
-            //LoTR.SetPrice();
-
             Console.ReadLine();
         }
     }
